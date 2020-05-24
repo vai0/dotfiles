@@ -1,0 +1,7 @@
+[pager]
+	branch = false
+[user]
+	email = jchi@memsql.com
+	name = Justin Chi
+[core]
+	editor = vim
