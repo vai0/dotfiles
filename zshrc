@@ -10,8 +10,8 @@ plugins=(git zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 
 # Source aliases
-source ~/.shell/aliases.sh
+source ~/.dotfiles/.shell/aliases.sh
 
 # Source bootstrap
-source ~/.shell/bootstrap.sh
+source ~/.dotfiles/.shell/bootstrap.sh
 
