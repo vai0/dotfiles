@@ -15,6 +15,9 @@ source ~/.dotfiles/.shell/aliases.sh
 # Source bootstrap
 source ~/.dotfiles/.shell/bootstrap.sh
 
-# Source secretes
+# Source secrets
 source ~/.dotfiles/.shell/secrets.sh
+
+# Source work-related bookmarks
+source ~/.dotfiles/.shell/work-bookmarks.sh
 
