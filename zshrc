@@ -15,3 +15,6 @@ source ~/.dotfiles/.shell/aliases.sh
 # Source bootstrap
 source ~/.dotfiles/.shell/bootstrap.sh
 
+# Source secretes
+source ~/.dotfiles/.shell/secrets.sh
+

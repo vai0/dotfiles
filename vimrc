@@ -10,8 +10,8 @@ syntax on
 
 " Basics
 "
-set number          " Show line numbers
 set showcmd         " Show things like partially-entered key sequences
+set number          " Show line numbers
 set showmode        " Show status of insert/visual mode in command line
 set showmatch       " Highlight brace/paren/etc. which matches one under cursor
 set laststatus=2    " Always show statusline
@@ -47,28 +47,29 @@ set scrolloff=5     " show lines above and below cursor (when possible)
 call plug#begin('~/.vim/plugged')
 
 Plug 'ycm-core/YouCompleteMe'
+
 Plug 'haishanh/night-owl.vim'
+Plug 'lifepillar/vim-solarized8'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
-Plug 'vim-utils/vim-man'
 Plug 'git@github.com:kien/ctrlp.vim.git'
-Plug 'mbbill/undotree'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
-" enable 24bit true color
 
+" enable 24bit true color
 if (has("termguicolors"))
  set termguicolors
 endif
 
-" Theme!
 "
-colorscheme night-owl
+" Theme!
+colorscheme solarized8
 
 " Let ripgrep search from the git root of your project, and also have it
 " respect the project's .gitignore
@@ -98,20 +99,23 @@ let g:ale_fix_on_save = 1
 let g:vim_jsx_pretty_colorful_config = 1
 
 " Mappings
-"
 let mapleader = " "
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+nnoremap <leader>tt :tabnew<CR>
+nnoremap <leader>te :tabedit
+nnoremap <leader>tn :tabnext<CR>
+nnoremap <leader>tp :tabprev<CR>
+nnoremap <leader>to :tabo<CR>
 
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>

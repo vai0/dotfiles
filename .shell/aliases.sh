@@ -94,11 +94,3 @@ alias jss="code ~/Documents/sandbox.js"
 alias pys="code ~/Documents/sandbox.py"
 alias mds="code ~/Documents/sandbox.md"
 
-# refresh aws sts profile access tokens for s3 usage
-export GOOGLE_USERNAME=jchi@memsql.com
-export GOOGLE_SP_ID=169398039274
-export GOOGLE_IDP_ID=C01aaho54
-alias refresh-aws-tokens-memsql-team="npx gsts --force --clean --verbose --aws-role-arn 'arn:aws:iam::798487538782:role/StandardUser'"
-alias refresh-aws-tokens-memsql-team-e="npx gsts --force --clean --verbose --aws-role-arn 'arn:aws:iam::651246146166:role/StandardUser'"
-# Old alias using aws-google-auth
-# alias refresh-aws-tokens="aws-google-auth --print-creds --resolve-aliases -a -I ${GOOGLE_IDP_ID} -S ${GOOGLE_SP_ID} -R us-east-1 -d 3600 -u ${USER}@memsql.com"
