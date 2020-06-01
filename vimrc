@@ -41,16 +41,17 @@ set scrolloff=5     " show lines above and below cursor (when possible)
 call plug#begin('~/.vim/plugged')
 
 Plug 'ycm-core/YouCompleteMe'
-
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
 Plug 'git@github.com:kien/ctrlp.vim.git'
+Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
 
 " Themes
 Plug 'haishanh/night-owl.vim'
@@ -97,6 +98,9 @@ let g:vim_jsx_pretty_colorful_config = 1
 
 " Mappings
 let mapleader = " "
+
+nnoremap J 5j<CR>
+nnoremap K 5k<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
