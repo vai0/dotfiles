@@ -1,5 +1,4 @@
 " Sanity
-set nocompatible " not vi compatible
 set nomodeline
 
 " Enable file type detection
@@ -40,32 +39,32 @@ set scrolloff=5     " show lines above and below cursor (when possible)
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'ycm-core/YouCompleteMe'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'git@github.com:kien/ctrlp.vim.git'
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
-Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+
+" Plug 'leafgarland/typescript-vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'jiangmiao/auto-pairs'
 
 " Themes
 Plug 'haishanh/night-owl.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tomasiser/vim-code-dark'
+Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
 
-" Theme!
-colorscheme solarized8
+colorscheme gruvbox
 
 " enable 24bit true color
 if (has("termguicolors"))
- set termguicolors
+    set termguicolors
 endif
 
 " Let ripgrep search from the git root of your project, and also have it
@@ -74,6 +73,9 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
+" TODO: use fzf, use wildignore to explicitly ignore node_modules, and all the
+" crap in freya
+"
 " Exclude these directories from file search
 " This only searches for directories tracked by git
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -86,15 +88,33 @@ let g:netrw_banner = 0
 " Set width of the directory explorer
 let g:netrw_winsize = 25
 
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-highlight ALEErrorSign ctermbg=NONE ctermfg=red
-highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-let g:ale_fixers = {
-\  'javascript': ['eslint'],
-\}
-let g:ale_fix_on_save = 1
 let g:vim_jsx_pretty_colorful_config = 1
+
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.js,*.jsx'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.html,*.js,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,js,jsx'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'html,js,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
 
 " Mappings
 let mapleader = " "
@@ -110,11 +130,6 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>= :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
-
-nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
-nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
-nnoremap <silent> <leader>rr :YcmCompleter RefactorRename<space>
 
 nnoremap <leader>/ :nohl<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>

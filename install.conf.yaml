@@ -6,4 +6,5 @@
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.config/nvim/init.vim: init.vim
 

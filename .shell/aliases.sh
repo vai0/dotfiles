@@ -1,5 +1,6 @@
+alias v='vim'
+
 # ls aliases
-alias ls='ls -CF'
 alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls'
@@ -43,8 +44,10 @@ alias copy="xclip -selection c"
 alias killchrome="killall chrome"
 alias killcontainers='docker rm -f $(docker container ls -aq)'
 alias killslack="kill -9 $(pidof slack)"
-alias vimrc="cd ~/.dotfiles && vim vimrc"
-alias aliases="cd ~/.dotfiles/.shell && vim aliases.sh"
+alias vimrc="cd ~/.dotfiles && v vimrc"
+alias initvim="cd ~/.dotfiles && v init.vim"
+alias aliases="cd ~/.dotfiles/.shell && v aliases.sh"
+alias installdotfiles="cd ~/.dotfiles && ./install"
 
 # Learnings
 export LEARNS_PATH="~/Documents/learnings"
