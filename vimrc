@@ -1,5 +1,4 @@
 " Sanity
-"
 set nocompatible " not vi compatible
 set nomodeline
 
@@ -9,7 +8,6 @@ filetype plugin indent on
 syntax on
 
 " Basics
-"
 set showcmd         " Show things like partially-entered key sequences
 set number          " Show line numbers
 set showmode        " Show status of insert/visual mode in command line
@@ -18,7 +16,6 @@ set laststatus=2    " Always show statusline
 set noerrorbells    " No sound effects
 
 " Indentation
-"
 set expandtab       " Use spaces for indentation
 set autoindent      " Indent new lines, etc. automagically
 set smartindent     " Also indent... automagically. Not sure how its different than autoindent
@@ -27,14 +24,12 @@ set softtabstop=4   " Treat tabs as four spaces for editing (backspace whole exp
 set shiftwidth=4    " Treat caret indentation as four spaces
 
 " Searching
-"
 set ignorecase      " Make searches case-insensitive...
 set smartcase       " ...except when they explicitly contain capitals
 set incsearch       " Show matches while typing search patterns
 set hlsearch        " Highlight all matches for a search
 
 " Layout
-"
 set nowrap          " Let long lines go off screen rather than wrapping to the next line
 set colorcolumn=100 " Highlight column 100 (to indicate appropriate line length)
 set signcolumn=yes  " Show the sign column even when it is empty
@@ -43,13 +38,10 @@ set listchars=tab:>-,extends:>,precedes:<,trail:X
 set scrolloff=5     " show lines above and below cursor (when possible)
 
 " Plugins
-"
 call plug#begin('~/.vim/plugged')
 
 Plug 'ycm-core/YouCompleteMe'
 
-Plug 'haishanh/night-owl.vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
@@ -58,18 +50,22 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+
+" Themes
+Plug 'haishanh/night-owl.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
+" Theme!
+colorscheme solarized8
 
 " enable 24bit true color
 if (has("termguicolors"))
  set termguicolors
 endif
-
-"
-" Theme!
-colorscheme solarized8
 
 " Let ripgrep search from the git root of your project, and also have it
 " respect the project's .gitignore
@@ -116,8 +112,11 @@ nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
 nnoremap <silent> <leader>rr :YcmCompleter RefactorRename<space>
 
+nnoremap <leader>/ :nohl<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+
 " Fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
-
+nnoremap <leader>gd :Gdiff<CR>
 
