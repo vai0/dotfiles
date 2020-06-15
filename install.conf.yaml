@@ -7,4 +7,11 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.config/nvim/init.vim: init.vim
+    ~/.config/Code/User/keybindings.json: .vscode/keybindings.json
+    ~/.config/Code/User/settings.json: .vscode/settings.json
 
+- shell:
+    -
+        command: cat .vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash
+        description: Install VSCode extensions
+        quiet: false

@@ -42,7 +42,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'git@github.com:kien/ctrlp.vim.git'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'alvan/vim-closetag'
@@ -127,9 +127,9 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>= :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nnoremap <leader>ps :Rg<SPACE>
 
 nnoremap <leader>/ :nohl<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>

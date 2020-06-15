@@ -47,6 +47,7 @@ alias killslack="kill -9 $(pidof slack)"
 alias vimrc="cd ~/.dotfiles && v vimrc"
 alias initvim="cd ~/.dotfiles && v init.vim"
 alias aliases="cd ~/.dotfiles/.shell && v aliases.sh"
+alias zshrc="cd ~/.dotfiles && v zshrc"
 alias installdotfiles="cd ~/.dotfiles && ./install"
 
 # Learnings
@@ -58,7 +59,7 @@ alias learns-pull="cd ${LEARNS_PATH} && git pull"
 
 # Notes
 export NOTES_PATH="~/Documents/notes"
-alias notes="code ${NOTES_PATH}/notes.md"
+alias notes="v ${NOTES_PATH}/notes.md"
 alias notes-commit="cd ${NOTES_PATH} && gicc"
 alias notes-push="cd ${NOTES_PATH} && git push"
 alias notes-pull="cd ${NOTES_PATH} && git pull"
