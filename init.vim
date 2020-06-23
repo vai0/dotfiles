@@ -37,32 +37,34 @@ set list            " Show non-printing characters
 set listchars=tab:>-,extends:>,precedes:<,trail:X
 set scrolloff=5     " show lines above and below cursor (when possible)
 
-" TODO: use fzf, use wildignore to explicitly ignore node_modules, and all the
-" crap in freya
+
 " TODO: setup all the necessary coc plugins and settings
 "   - autoclosetags
+"   - fix syntax highlighting
 "   - autopairs
 "   - css completion
-" TODO: install vim airline
-" TODO: open nerdtree splits to the right
+
 
 " Plugins
 call plug#begin('~/.vim/plugged')
 
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
-Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jparise/vim-graphql'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 
+" Yay
 Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
-" Plug 'alvan/vim-closetag'
-" Plug 'jiangmiao/auto-pairs'
 
 " Themes
 Plug 'haishanh/night-owl.vim'
@@ -84,18 +86,6 @@ endif
 if executable('rg')
     let g:rg_derive_root='true'
 endif
-
-" Exclude these directories from file search
-" This only searches for directories tracked by git
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_use_caching = 0
-
-" Open files in a new vertical split
-let g:netrw_browse_split = 2
-let g:netrw_banner = 0
-
-" Set width of the directory explorer
-let g:netrw_winsize = 25
 
 let g:vim_jsx_pretty_colorful_config = 1
 
@@ -269,6 +259,8 @@ nnoremap <silent> <Leader>= :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
 nnoremap <leader>ps :Rg<SPACE>
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>pf :Files<CR>
 nnoremap <leader>de :!rm "%:p"<CR>
 nnoremap <leader>/ :nohl<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
@@ -276,7 +268,17 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 " Fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gj :diffget //3<CR>
 
+" GoTo code navigation.
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <leader>g] <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
+nnoremap <leader>cr :CocRestart

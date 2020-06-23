@@ -97,3 +97,5 @@ source ~/.dotfiles/.shell/secrets.sh
 # Source work-related bookmarks
 source ~/.dotfiles/.shell/work-bookmarks.sh
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

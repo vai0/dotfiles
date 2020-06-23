@@ -22,6 +22,10 @@ eval "$(direnv hook zsh)"
 export PATH=/home/jchi/.fnm:$PATH
 eval "`fnm env --multi`"
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
 # Source aliases
 source ~/.dotfiles/.shell/aliases.sh
 
@@ -33,4 +37,5 @@ source ~/.dotfiles/.shell/secrets.sh
 
 # Source work-related bookmarks
 source ~/.dotfiles/.shell/work-bookmarks.sh
+
 
