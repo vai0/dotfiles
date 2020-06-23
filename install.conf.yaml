@@ -14,4 +14,5 @@
     -
         command: cat .vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash
         description: Install VSCode extensions
-        quiet: false
+        quiet: true
+        stdout: true

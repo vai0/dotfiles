@@ -8,6 +8,7 @@ esbenp.prettier-vscode
 ginfuru.ginfuru-better-solarized-dark-theme
 hashicorp.terraform
 jdinhlife.gruvbox
+jspolancor.presentationmode
 MaoSantaella.night-wolf
 mischah.relaxed-theme
 mkxml.vscode-filesize
@@ -22,4 +23,4 @@ stkb.rewrap
 victorlitvinenko.vscode-soft-colors
 vscodevim.vim
 xabikos.JavaScriptSnippets
-
+yukidoi.blade-runner

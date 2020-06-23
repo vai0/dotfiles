@@ -169,7 +169,7 @@
   "editor.lineNumbers": "relative",
   "editor.cursorSurroundingLines": 5,
   "editor.fontFamily": "Iosevka, Hack, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.fontWeight": "400",
+  "editor.fontWeight": "500",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "eslint.alwaysShowStatus": true,

@@ -4,8 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="igorsilva"
-export NVM_LAZY_LOAD=true
-plugins=(git zsh-nvm)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -19,6 +18,9 @@ if [ -e /home/jchi/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jchi/.nix-p
 # Activate direnv
 eval "$(direnv hook zsh)"
 
+# fnm
+export PATH=/home/jchi/.fnm:$PATH
+eval "`fnm env --multi`"
 
 # Source aliases
 source ~/.dotfiles/.shell/aliases.sh
