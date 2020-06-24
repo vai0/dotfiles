@@ -50,6 +50,9 @@ alias aliases="cd ~/.dotfiles/.shell && v aliases.sh"
 alias zshrc="cd ~/.dotfiles && v zshrc"
 alias installdotfiles="cd ~/.dotfiles && ./install"
 
+# Kill and remove all containers
+alias drm='docker rm -f $(docker container ls -aq)'
+
 # Learnings
 export LEARNS_PATH="~/Documents/learnings"
 alias learns="code ${LEARNS_PATH}/stuff-ive-learned.md"
