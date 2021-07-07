@@ -44,14 +44,15 @@ alias copy="xclip -selection c"
 alias killchrome="killall chrome"
 alias killcontainers='docker rm -f $(docker container ls -aq)'
 alias killslack="kill -9 $(pidof slack)"
-alias vimrc="cd ~/.dotfiles && v vimrc"
-alias initvim="cd ~/.dotfiles && v init.vim"
-alias aliases="cd ~/.dotfiles/.shell && v aliases.sh"
-alias zshrc="cd ~/.dotfiles && v zshrc"
-alias installdotfiles="cd ~/.dotfiles && ./install"
+alias vimrc="v ~/.dotfiles/vimrc"
+alias initvim="v ~/.dotfiles/init.vim"
+alias aliases="v ~/.dotfiles/.shell/aliases.sh"
+alias zshrc="v ~/.dotfiles/zshrc"
+alias installdotfiles="~/.dotfiles/install"
 
 # Kill and remove all containers
 alias drm='docker rm -f $(docker container ls -aq)'
+alias dsp='docker system prune -a --volumes'
 
 # Learnings
 export LEARNS_PATH="~/Documents/learnings"
@@ -71,4 +72,11 @@ alias notes-pull="cd ${NOTES_PATH} && git pull"
 alias jss="code ~/Documents/sandbox.js"
 alias pys="code ~/Documents/sandbox.py"
 alias mds="code ~/Documents/sandbox.md"
+
+# Clear quota to create free trial clusters again
+alias clearquota=PGTZ=UTC ./run.sh psql -h 127.0.0.1 -U postgres -d freya -c "delete from quotausage where kind = 'Clusters'"
+
+# Delete all clusters
+alias deleteClusters=kubectl delete memsql --all && make postgres-console-super
+# then run delete from clusters;
 

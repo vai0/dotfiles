@@ -8,12 +8,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-
-# Set nix env variables
-. ${HOME}/.nix-profile/etc/profile.d/nix.sh
-
 # Added by Nix installer
-if [ -e /home/jchi/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jchi/.nix-profile/etc/profile.d/nix.sh; fi
+if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile/etc/profile.d/nix.sh; fi
 
 # Activate direnv
 eval "$(direnv hook zsh)"
@@ -21,6 +17,9 @@ eval "$(direnv hook zsh)"
 # fnm
 export PATH=/home/jchi/.fnm:$PATH
 eval "`fnm env --multi`"
+
+# snap package managener (for spotify... spotify's deb package is out of date)
+export PATH="$PATH:/snap/bin"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -37,5 +36,4 @@ source ~/.dotfiles/.shell/secrets.sh
 
 # Source work-related bookmarks
 source ~/.dotfiles/.shell/work-bookmarks.sh
-
 
