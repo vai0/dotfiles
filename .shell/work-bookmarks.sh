@@ -35,12 +35,12 @@ alias p2="pyenv global 2.7.17"
 alias p3="pyenv global 3.6.3"
 
 # Install memsql cluster-in-a-box
-export LICENSE_KEY=BGM5MjQwZGE3Nzg0MTRiMDk5NWNlNzAwOTQ4MTQwZWZjAAAAAAAAAAAAAAIAAAAAAAQwNgIZAJd6ds/wagCQvs1asVWyN40v0LVlYTs6CwIZAMff+F4bKAPsYRY8HW2h/6n5O6DjikyYAg==
+export SINGLESTORE_LICENSE=BGM5MjQwZGE3Nzg0MTRiMDk5NWNlNzAwOTQ4MTQwZWZjAAAAAAAAAAAAAAIAAAAAAAQwNgIZAJd6ds/wagCQvs1asVWyN40v0LVlYTs6CwIZAMff+F4bKAPsYRY8HW2h/6n5O6DjikyYAg==
 export ROOT_PASSWORD="d"
 alias ciab="docker rm -f singlestore-ciab || true && \
     docker run -i --init \
     --name singlestore-ciab \
-    -e LICENSE_KEY=$LICENSE_KEY \
+    -e LICENSE_KEY=$SINGLESTORE_LICENSE \
     -e ROOT_PASSWORD=$ROOT_PASSWORD \
     -p 3306:3306 -p 8080:8080 \
     singlestore/cluster-in-a-box && \
