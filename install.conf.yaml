@@ -9,6 +9,7 @@
     ~/.config/nvim/init.vim: init.vim
     ~/.config/Code/User/keybindings.json: .vscode/keybindings.json
     ~/.config/Code/User/settings.json: .vscode/settings.json
+    ~/.config/terminator/config: .terminator/config
 
 - shell:
     -

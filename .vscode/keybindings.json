@@ -35,7 +35,7 @@
     {
         "key": "ctrl+n",
         "command": "workbench.action.quickOpenSelectNext",
-        "when": "inQuickOpen",
+        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+n",
@@ -47,11 +47,11 @@
         "command": "selectNextSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
-    {
-        "key": "ctrl+n",
-        "command": "history.showNext",
-        "when": "historyNavigationEnabled && historyNavigationWidget"
-    },
+    // {
+    //   "key": "ctrl+n",
+    //   "command": "history.showNext",
+    //   "when": "historyNavigationEnabled && historyNavigationWidget"
+    // },
     {
         "key": "ctrl+n",
         "command": "list.focusDown",

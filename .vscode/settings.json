@@ -1,271 +1,192 @@
 {
-  "search.exclude": {
-    ".DS_Store": true,
-    "**/.cache": true,
-    "**/.pytest_cache": true,
-    "**/.git": true,
-    "**/backend/venv": true,
-    "**/frontend/public": true,
-    "**/node_modules": true,
-    "**/public": true,
-    "**/public-storybook": true,
-    "**/dist": true,
-    "**/dist-prod": true,
-    "**/dist-staging": true,
-    "**/dist-test": true,
-    "**/vendor/": true
-  },
-  "files.watcherExclude": {
-    ".DS_Store": true,
-    "**/.cache": true,
-    "**/.pytest_cache": true,
-    "**/.git": true,
-    "**/backend/venv": true,
-    "**/frontend/public": true,
-    "**/node_modules": true,
-    "**/public": true,
-    "**/public-storybook": true,
-    "**/dist": true,
-    "**/dist-prod": true,
-    "**/dist-staging": true,
-    "**/dist-test": true,
-    "**/vendor/": true
-  },
-  "keyboard.dispatch": "keyCode",
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
-  },
-  "emmet.triggerExpansionOnTab": true,
-  "window.zoomLevel": 1,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.colorCustomizations": {
-    "diffEditor.insertedTextBackground": "#99b76d23",
-    "diffEditor.insertedTextBorder": "#addb6733",
-    "diffEditor.removedTextBackground": "#ef535033",
-    "diffEditor.removedTextBorder": "#ef53504d"
-  },
-  "postcssSorting.config": {
-    "order": [
-      "custom-properties",
-      "dollar-variables",
-      "declarations",
-      "at-rules",
-      "rules"
+    "search.exclude": {
+        ".DS_Store": true,
+        "**/.cache": true,
+        "**/.pytest_cache": true,
+        "**/.git": true,
+        "**/backend/venv": true,
+        "**/frontend/public": true,
+        "**/node_modules": true,
+        "**/public-storybook": true,
+        "**/dist": true,
+        "**/dist-prod": true,
+        "**/dist-staging": true,
+        "**/dist-test": true,
+        "**/vendor/": true
+    },
+    "files.watcherExclude": {
+        ".DS_Store": true,
+        "**/.cache": true,
+        "**/.pytest_cache": true,
+        "**/.git": true,
+        "**/backend/venv": true,
+        "**/frontend/public": true,
+        "**/node_modules": true,
+        "**/public-storybook": true,
+        "**/dist": true,
+        "**/dist-prod": true,
+        "**/dist-staging": true,
+        "**/dist-test": true,
+        "**/vendor/": true
+    },
+    "keyboard.dispatch": "keyCode",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "typescript": "typescriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.colorCustomizations": {
+        "diffEditor.insertedTextBackground": "#99b76d23",
+        "diffEditor.insertedTextBorder": "#addb6733",
+        "diffEditor.removedTextBackground": "#ef535033",
+        "diffEditor.removedTextBorder": "#ef53504d"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    // "[javascript]": {
+    //     "editor.formatOnSave": false
+    // },
+    "[json]": {
+        "editor.formatOnSave": false
+    },
+    "[html]": {
+        "editor.formatOnSave": false
+    },
+    "[markdown]": {
+        "editor.formatOnSave": false
+    },
+    "[yaml]": {
+        "editor.formatOnSave": false
+    },
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "es5",
+    "go.gopath": "/home/jchi/projects/helios/go",
+    "go.formatTool": "gofmt",
+    "editor.renderWhitespace": "boundary",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.addMissingImports": false
+    },
+    "editor.lineNumbers": "relative",
+    "editor.cursorSurroundingLines": 5,
+    "editor.fontFamily": "Iosevka, Hack, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontWeight": "500",
+    "editor.fontSize": 19,
+    "editor.fontLigatures": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.workingDirectories": ["frontend"],
+    "vim.easymotion": false,
+    "vim.leader": "<space>",
+    "vim.highlightedyank": {
+        "enable": true,
+        "duration": 100
+    },
+    "vim.hlsearch": true,
+    "vim.sneak": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "k"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<leader>", "h"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<leader>", "l"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+            "before": ["<leader>", "j"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<leader>", "k"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<leader>", "/"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["<leader>", "w"],
+            "commands": ["workbench.action.files.save"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["<leader>", "t", "t"],
+            "commands": [":tabnew"]
+        },
+        {
+            "before": ["<leader>", "t", "n"],
+            "commands": [":tabnext"]
+        },
+        {
+            "before": ["<leader>", "t", "p"],
+            "commands": [":tabprev"]
+        },
+        {
+            "before": ["<leader>", "t", "o"],
+            "commands": [":tabo"]
+        }
     ],
-    "properties-order": [
-      "position",
-      "top",
-      "right",
-      "bottom",
-      "left",
-      "z-index",
-      "display",
-      "flex-flow",
-      "flex-direction",
-      "flex-wrap",
-      "justify-content",
-      "align-items",
-      "align-content",
-      "flex",
-      "flex-shrink",
-      "flex-grow",
-      "flex-basis",
-      "align-self",
-      "order",
-      "visibility",
-      "font-family",
-      "font-size",
-      "font-weight",
-      "font-style",
-      "line-height",
-      "text-align",
-      "text-decoration",
-      "text-transform",
-      "white-space",
-      "color",
-      "box-sizing",
-      "width",
-      "min-width",
-      "max-width",
-      "height",
-      "min-height",
-      "max-height",
-      "padding",
-      "padding-top",
-      "padding-right",
-      "padding-bottom",
-      "padding-left",
-      "margin",
-      "margin-top",
-      "margin-right",
-      "margin-bottom",
-      "margin-left",
-      "background",
-      "background-color",
-      "background-size",
-      "background-position",
-      "border",
-      "border-top",
-      "border-right",
-      "border-bottom",
-      "border-left",
-      "border-radius",
-      "border-top-left-radius",
-      "border-top-right-radius",
-      "border-bottom-right-radius",
-      "border-bottom-left-radius",
-      "box-shadow",
-      "overflow",
-      "transform",
-      "transform-origin",
-      "perspective",
-      "backface-visibility",
-      "transition",
-      "transition-delay",
-      "transition-duration",
-      "transition-property",
-      "transition-timing-function",
-      "animation",
-      "animation-delay",
-      "animation-direction",
-      "animation-duration",
-      "animation-fill-mode",
-      "animation-iteration-count",
-      "animation-name",
-      "animation-play-state",
-      "animation-timing-function",
-      "opacity",
-      "pointer-events",
-      "cursor",
-      "user-select",
-      "content"
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "k"]
+        }
     ],
-    "unspecified-properties-position": "bottom"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "javascript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "editor.formatOnSave": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.formatOnSave": false
-  },
-  "[markdown]": {
-    "editor.formatOnSave": false
-  },
-  "[yaml]": {
-    "editor.formatOnSave": false
-  },
-  "[mdx]": {
-    "editor.formatOnSave": false
-  },
-  "editor.renderWhitespace": "boundary",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "editor.lineNumbers": "relative",
-  "editor.cursorSurroundingLines": 5,
-  "editor.fontFamily": "Iosevka, Hack, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.fontWeight": "500",
-  "editor.fontSize": 14,
-  "editor.fontLigatures": true,
-  "eslint.alwaysShowStatus": true,
-  "eslint.workingDirectories": ["frontend"],
-  "vim.easymotion": false,
-  "vim.leader": "<space>",
-  "vim.highlightedyank": {
-    "enable": true,
-    "duration": 100
-  },
-  "vim.hlsearch": true,
-  "vim.sneak": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["J"],
-      "after": ["5", "j"]
+    "vim.handleKeys": {
+        "<C-f>": false
     },
-    {
-      "before": ["K"],
-      "after": ["5", "k"]
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.currentLine.enabled": true,
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
-    {
-      "before": ["<C-h>"],
-      "after": ["<C-w>", "h"]
-    },
-    {
-      "before": ["<C-l>"],
-      "after": ["<C-w>", "l"]
-    },
-    {
-      "before": ["<C-j>"],
-      "after": ["<C-w>", "j"]
-    },
-    {
-      "before": ["<C-k>"],
-      "after": ["<C-w>", "k"]
-    },
-    {
-      "before": ["<leader>", "h"],
-      "after": ["<C-w>", "h"]
-    },
-    {
-      "before": ["<leader>", "l"],
-      "after": ["<C-w>", "l"]
-    },
-    {
-      "before": ["<leader>", "j"],
-      "after": ["<C-w>", "j"]
-    },
-    {
-      "before": ["<leader>", "k"],
-      "after": ["<C-w>", "k"]
-    },
-    {
-      "before": ["<leader>", "/"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["<leader>", "w"],
-      "commands": ["workbench.action.files.save"]
-    },
-    {
-      "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      "before": ["<leader>", "t", "t"],
-      "commands": [":tabnew"]
-    },
-    {
-      "before": ["<leader>", "t", "n"],
-      "commands": [":tabnext"]
-    },
-    {
-      "before": ["<leader>", "t", "p"],
-      "commands": [":tabprev"]
-    },
-    {
-      "before": ["<leader>", "t", "o"],
-      "commands": [":tabo"]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["J"],
-      "after": ["5", "j"]
-    },
-    {
-      "before": ["K"],
-      "after": ["5", "k"]
-    }
-  ],
-  "vim.handleKeys": {
-    "<C-f>": false
-  },
-  "files.autoSave": "off",
-  "workbench.colorTheme": "Soft Colors"
+    "workbench.colorTheme": "Soft Colors",
+    "python.formatting.provider": "black",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.untitled.hint": "hidden",
+    "window.zoomLevel": 1
 }
 

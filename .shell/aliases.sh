@@ -44,6 +44,8 @@ alias copy="xclip -selection c"
 alias killchrome="killall chrome"
 alias killcontainers='docker rm -f $(docker container ls -aq)'
 alias killslack="kill -9 $(pidof slack)"
+
+# Managing dotfiles
 alias vimrc="v ~/.dotfiles/vimrc"
 alias initvim="v ~/.dotfiles/init.vim"
 alias aliases="v ~/.dotfiles/.shell/aliases.sh"
@@ -53,6 +55,10 @@ alias installdotfiles="~/.dotfiles/install"
 # Kill and remove all containers
 alias drm='docker rm -f $(docker container ls -aq)'
 alias dsp='docker system prune -a --volumes'
+
+# Manage my dotfiles with git. e.g., instead of "git status", use "config status"
+# See https://www.atlassian.com/git/tutorials/dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Learnings
 export LEARNS_PATH="~/Documents/learnings"
@@ -72,11 +78,4 @@ alias notes-pull="cd ${NOTES_PATH} && git pull"
 alias jss="code ~/Documents/sandbox.js"
 alias pys="code ~/Documents/sandbox.py"
 alias mds="code ~/Documents/sandbox.md"
-
-# Clear quota to create free trial clusters again
-alias clearquota=PGTZ=UTC ./run.sh psql -h 127.0.0.1 -U postgres -d freya -c "delete from quotausage where kind = 'Clusters'"
-
-# Delete all clusters
-alias deleteClusters=kubectl delete memsql --all && make postgres-console-super
-# then run delete from clusters;
 
