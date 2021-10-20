@@ -11,8 +11,6 @@ source $ZSH/oh-my-zsh.sh
 # Added by Nix installer
 if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile/etc/profile.d/nix.sh; fi
 
-# Activate direnv
-eval "$(direnv hook zsh)"
 
 # fnm
 export PATH=/home/jchi/.fnm:$PATH
@@ -39,3 +37,5 @@ source ~/.dotfiles/.shell/secrets.sh
 # Source work-related bookmarks
 source ~/.dotfiles/.shell/work-bookmarks.sh
 
+# Activate direnv
+eval "$(direnv hook $SHELL)"
