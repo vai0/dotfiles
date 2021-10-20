@@ -1,8 +1,6 @@
+alias bootstrap="vim ~/.dotfiles/.shell/bootstrap.sh"
 # Increase hold down key rate
 xset r rate 200 50
-
-# Autojump
-[[ -s /home/jchi/.autojump/etc/profile.d/autojump.sh ]] && source /home/jchi/.autojump/etc/profile.d/autojump.sh
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"

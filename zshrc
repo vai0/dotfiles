@@ -24,6 +24,8 @@ export PATH="$PATH:/snap/bin"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Init z (https://github.com/rupa/z)
+. ~/z.sh
 
 # Source aliases
 source ~/.dotfiles/.shell/aliases.sh
