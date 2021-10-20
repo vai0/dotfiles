@@ -5,3 +5,5 @@
 	name = Justin Chi
 [core]
 	editor = vim
+[pull]
+	rebase = false
