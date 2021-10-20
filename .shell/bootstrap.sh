@@ -1,17 +1,7 @@
 alias bootstrap="vim ~/.dotfiles/.shell/bootstrap.sh"
+
 # Increase hold down key rate
 xset r rate 200 50
-
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# Auto-activate virtualenv
-# https://towardsdatascience.com/managing-virtual-environment-with-pyenv-ae6f3fb835f8
-eval "$(pyenv virtualenv-init -)"
 
 # fzf extended regex matchers
 export FZF_DEFAULT_OPS="--extended"
@@ -22,3 +12,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 #go
 export PATH=$PATH:/usr/local/go/bin
+
+# Arcanist (phabricator diffs)
+export PATH=$PATH:/usr/local/arcanist/bin
+
