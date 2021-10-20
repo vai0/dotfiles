@@ -16,7 +16,7 @@ eval "$(direnv hook zsh)"
 
 # fnm
 export PATH=/home/jchi/.fnm:$PATH
-eval "`fnm env --multi`"
+eval "`fnm env`"
 
 # snap package managener (for spotify... spotify's deb package is out of date)
 export PATH="$PATH:/snap/bin"
