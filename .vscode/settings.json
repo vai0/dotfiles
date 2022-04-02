@@ -68,7 +68,6 @@
     },
     "prettier.tabWidth": 4,
     "prettier.trailingComma": "es5",
-    "go.gopath": "/home/jchi/projects/helios/go",
     "go.formatTool": "gofmt",
     "editor.renderWhitespace": "boundary",
     "editor.codeActionsOnSave": {
@@ -187,6 +186,5 @@
     "python.formatting.provider": "black",
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.editor.untitled.hint": "hidden",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 0
 }
-

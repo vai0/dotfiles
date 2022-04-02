@@ -1,9 +1,9 @@
 [pager]
 	branch = false
 [user]
-	email = jchi@memsql.com
+	email = j.chi2241@gmail.com
 	name = Justin Chi
 [core]
-	editor = vim
+	editor = nvim
 [pull]
 	rebase = false
