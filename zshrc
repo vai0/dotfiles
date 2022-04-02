@@ -1,35 +1,43 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# * ---------- oh-my-zsh --------- *
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="igorsilva"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+# * ---------- oh-my-zsh --------- *
+
+
+# * ----------    fzf    --------- *
+# init 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# extended regex matchers
+export FZF_DEFAULT_OPS="--extended"
+
+# use ripgrep as the file-searcher with sensible defaults
+export FZF_DEFAULT_COMMAND="rg --files --hidden --ignore-file ~/.ignore"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# * ----------    fzf    --------- *
+
 
 # fnm
 export PATH=$HOME/.fnm:$PATH
 eval "`fnm env`"
 
+
 # pyenv
 eval "$(pyenv init --path)"
 
-# init fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# fzf extended regex matchers
-export FZF_DEFAULT_OPS="--extended"
-
-# have fzf use ripgrep as the file-searcher with sensible defaults
-export FZF_DEFAULT_COMMAND="rg --files --hidden --ignore-file ~/.ignore"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-# Init z (https://github.com/rupa/z)
+# z (file-jumper) https://github.com/rupa/z
 export _Z_CMD="j" # remap default "z" cmd to "j"
 . ~/z.sh
 
-# ---------- ALIASES ---------- #
+
+# * ---------- ALIASES --------- *
 alias v='nvim'
 
 # ls aliases
@@ -64,5 +72,4 @@ function kp() {
 # Kill and remove all containers
 alias drm='docker rm -f $(docker container ls -aq)'
 alias dsp='docker system prune -a --volumes'
-
-# ---------- ALIASES ---------- #
+# * ---------- ALIASES --------- *

@@ -22,9 +22,64 @@ To only run `shell`
 
 See https://github.com/anishathalye/dotbot#command-line-arguments
 
-## Installing nvim plugins
-1. Run `./install --only shell` to install vim-plug
-2. Enter nvim, and run :PlugInstall
+## Installing Tools
+
+### xcode
+```
+xcode-select --install
+```
+
+### zsh
+```
+brew install zsh
+```
+
+### VSCode
+See https://code.visualstudio.com/docs/setup/mac#_installation
+
+### VSCode Extensions
+cd into this directory and run:
+```
+cat .vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash
+```
+
+### oh my zsh
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### pyenv
+See https://github.com/pyenv/pyenv#installation
+
+### fnm
+See https://github.com/Schniz/fnm#installation
+
+### z (file jumper)
+```
+curl https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/z.sh
+```
+
+### fzf (fuzzy finder)
+```
+brew install fzf && $(brew --prefix)/opt/fzf/install
+```
+
+### ripgrep (fast grep)
+```
+brew install ripgrep
+```
+
+### nvim
+```
+brew install nvim
+```
+
+### nvim plugins
+1. Install nvim plugin manager "vim-plug"
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+2. Enter nvim, and run `:PlugInstall`
 
 See https://github.com/junegunn/vim-plug#commands
 

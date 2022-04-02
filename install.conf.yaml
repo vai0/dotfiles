@@ -11,6 +11,10 @@
         path: init.vim
         create: true
         force: true
+    ~/.oh-my-zsh/themes/igorsilva.zsh-theme:
+        path: .oh-my-zsh/igorsilva.zsh-theme
+        create: true
+        force: true
     ~/Library/Application\ Support/Code/User/keybindings.json:
         path: .vscode/keybindings.json
         create: true
@@ -21,34 +25,6 @@
         force: true
 
 - shell:
-    -
-        command: cat .vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash
-        quiet: true
-        description: Install VSCode extensions
-    -
-        command: curl https://raw.githubusercontent.com/vai0/zsh-theme/master/igorsilva.zsh-theme > ~/.oh-my-zsh/themes/igorsilva.zsh-theme
-        quiet: true
-        description: Install igorsilva oh-my-zsh theme
-    -
-        command: brew install nvim
-        quiet: true
-        description: Install nvim
-    -
-        command: curl https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/z.sh
-        quiet: true
-        description: Install z (file jumper)
-    -
-        command: brew install fzf && $(brew --prefix)/opt/fzf/install
-        quiet: true
-        description: Install fzf
-    -
-        command: brew install ripgrep
-        quiet: true
-        description: Install ripgrep
-    -
-        command: sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-        quiet: true
-        description: Install vim plugin manager "vim-plug" for nvim
     -
         command: defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
         quiet: true
