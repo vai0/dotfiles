@@ -44,5 +44,9 @@ brew tap homebrew/cask-fonts
 brew install --cask font-iosevka
 ```
 
+## Installing iTerm2 Theme
+1. Open iTerm2 > Preferences > Profiles Tab > Other Actions > Import JSON Profiles
+2. Select "iterm2/profile-justin-personal-macbook.json" from this repo.
+
 ## TODOs
 [] consider migrating this repo over to a much simpler way of managing dotfiles: https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/. Mig write a script that installs the vscode extensions.
