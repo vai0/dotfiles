@@ -4,11 +4,12 @@ The dotfiles in this branch `personal-macbook` are configured for my personal Ma
 ## How this works
 This repo uses [dotbot](https://github.com/anishathalye/dotbot) to manage dotfiles.
 
-Everything configuration starts in `install.conf.yaml`. The `link` key symlinks files in this repo to files on your machine. The `shell` key runs each command in the list. Running `./install` will execute the links and commands in that config file.
+Everything starts in `install.conf.yaml`. `link` symlinks files in this repo to files on your machine. `shell` runs each command in the list. Running `./install` will execute the links and commands in that config file.
 
 ## Installing on Fresh Machine
 1. clone this repo (anywhere)
-2. run `./install`
+2. Manually install tools listed in this README
+3. run `./install`
 
 ## Making changes
 1. Make changes to the files in this repo
