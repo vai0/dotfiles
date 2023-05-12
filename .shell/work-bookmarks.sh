@@ -15,24 +15,22 @@ alias bbf='bf && make build-frontend'
 alias sbf="bf && make server"
 
 # Helios commands
-alias rhel="make frontend-start"
-alias dlhelf="pyenv global 3.6.3 && python scripts/deploy-log frontend"
-alias dlhelb="pyenv global 3.6.3 && python scripts/deploy-log backend"
-alias bhel="make frontend-build-dev"
-alias shel="pyenv global 2.7.17 && make frontend-serve-dev"
 alias lhel="kcadm-login && kcadm update realms/memsql -s verifyEmail=false"
 alias rkct="./deploy/kube/util/reload-keycloak-img.sh && ./deploy/kube/util/reset-postgres.sh"
+alias nukehelios="echo 'y' | dsp && hel && make kube-init && make frontend-start"
+alias login-ecr="cd ~/projects/aws-ci-runners && make login-registry && cd -"
 
 # Prep projects for a diff
 alias pbf="bf && make lint-fix && make lint && make test"
-alias phel="hel && make frontend-prettier && make frontend-lint-fix && make frontend-lint && make frontend-tsc && make frontend-test"
+alias lintfe="hel && make frontend-prettier-full-check && make frontend-lint-fix && make frontend-lint && make frontend-tsc"
 alias pstudio="studio && cd frontend && npm run prettier && npm run lint && npm run tsc && npm run test"
 
 # Other
-alias ad="arc diff"
-alias al="arc land"
+alias bastion="ssh bastion-1b"
 alias p2="pyenv global 2.7.17"
 alias p3="pyenv global 3.6.3"
+alias fl="flameshot gui"
+
 
 # Install memsql cluster-in-a-box
 export SINGLESTORE_LICENSE=BGM5MjQwZGE3Nzg0MTRiMDk5NWNlNzAwOTQ4MTQwZWZjAAAAAAAAAAAAAAIAAAAAAAQwNgIZAJd6ds/wagCQvs1asVWyN40v0LVlYTs6CwIZAMff+F4bKAPsYRY8HW2h/6n5O6DjikyYAg==

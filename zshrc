@@ -21,6 +21,9 @@ export PATH="$PATH:/snap/bin"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# enable fzf keybindings and fuzzy auto-completion
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 # Init z (https://github.com/rupa/z)
 . ~/z.sh
@@ -37,5 +40,16 @@ source ~/.dotfiles/.shell/secrets.sh
 # Source work-related bookmarks
 source ~/.dotfiles/.shell/work-bookmarks.sh
 
+# Source kubectl auto-completion
+source <(kubectl completion zsh)
+
 # Activate direnv
 eval "$(direnv hook $SHELL)"
+
+# fnm
+export PATH=/home/jchi/.fnm:$PATH
+eval "`fnm env`"
+
+autoload bashcompinit
+bashcompinit
+# source /home/jchi/projects/vcpkg/scripts/vcpkg_completion.zsh

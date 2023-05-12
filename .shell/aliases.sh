@@ -69,7 +69,7 @@ alias learns-pull="cd ${LEARNS_PATH} && git pull"
 
 # Notes
 export NOTES_PATH="~/Documents/notes"
-alias notes="v ${NOTES_PATH}/notes.md"
+alias notes="sudo v ${NOTES_PATH}/notes.md"
 alias notes-commit="cd ${NOTES_PATH} && gicc"
 alias notes-push="cd ${NOTES_PATH} && git push"
 alias notes-pull="cd ${NOTES_PATH} && git pull"

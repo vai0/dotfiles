@@ -43,16 +43,19 @@
         "diffEditor.removedTextBackground": "#ef535033",
         "diffEditor.removedTextBorder": "#ef53504d"
     },
-    "javascript.updateImportsOnFileMove.enabled": "never",
+    "javascript.updateImportsOnFileMove.enabled": "prompt",
     "javascript.preferences.importModuleSpecifier": "non-relative",
     "typescript.preferences.importModuleSpecifier": "non-relative",
+    "editor.stickyScroll.enabled": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    // "[javascript]": {
-    //     "editor.formatOnSave": false
-    // },
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
     "[json]": {
-        "editor.formatOnSave": false
+        "editor.formatOnSave": true
     },
     "[html]": {
         "editor.formatOnSave": false
@@ -64,12 +67,32 @@
         "editor.formatOnSave": false
     },
     "[python]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
+    "[graphql]": {
+        "editor.formatOnSave": false
     },
     "prettier.tabWidth": 4,
     "prettier.trailingComma": "es5",
     "go.gopath": "/home/jchi/projects/helios/go",
+    "go.docsTool": "gogetdoc",
     "go.formatTool": "gofmt",
+    "go.alternateTools": {
+        "gofmt": "gofumpt"
+    },
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.defaultFormatter": "golang.go"
+    },
+    "gopls": {
+        "build.buildFlags": ["-tags=cluster,integration"]
+    },
     "editor.renderWhitespace": "boundary",
     "editor.codeActionsOnSave": {
         "source.fixAll": true,
@@ -81,7 +104,6 @@
     "editor.fontWeight": "500",
     "editor.fontSize": 19,
     "editor.fontLigatures": true,
-    "eslint.alwaysShowStatus": true,
     "eslint.workingDirectories": ["frontend"],
     "vim.easymotion": false,
     "vim.leader": "<space>",
@@ -89,7 +111,6 @@
         "enable": true,
         "duration": 100
     },
-    "vim.hlsearch": true,
     "vim.sneak": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -174,19 +195,19 @@
     "vim.handleKeys": {
         "<C-f>": false
     },
+    "vim.hlsearch": true,
     "gitlens.codeLens.enabled": false,
-    "gitlens.hovers.currentLine.enabled": true,
-    "[go]": {
-        "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.statusBar.enabled": true,
+    "gitlens.statusBar.command": "gitlens.showQuickCommitDetails",
     "workbench.colorTheme": "Soft Colors",
     "python.formatting.provider": "black",
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.editor.untitled.hint": "hidden",
-    "window.zoomLevel": 1
+    "git.ignoreLegacyWarning": true,
+    "files.insertFinalNewline": true,
+    "window.zoomLevel": 2
 }
-

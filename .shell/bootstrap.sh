@@ -16,3 +16,6 @@ export PATH=$PATH:/usr/local/go/bin
 # Arcanist (phabricator diffs)
 export PATH=$PATH:/usr/local/arcanist/bin
 
+#neovim
+export PATH=$PATH:/usr/local/bin/nvim
+
