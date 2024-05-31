@@ -1,3 +1,5 @@
+alias aliases="vim ~/.dotfiles/.shell/aliases.sh"
+
 alias v='vim'
 
 # ls aliases
@@ -48,7 +50,6 @@ alias killslack="kill -9 $(pidof slack)"
 # Managing dotfiles
 alias vimrc="vim ~/.dotfiles/vimrc"
 alias initvim="vim ~/.dotfiles/init.vim"
-alias aliases="vim ~/.dotfiles/.shell/aliases.sh"
 alias zshrc="vim ~/.dotfiles/zshrc"
 alias installdotfiles="~/.dotfiles/install"
 
@@ -59,10 +60,6 @@ alias dsp='docker system prune --force --volumes -a'
 
 # Clear go cache and builds
 alias goclean='go clean -cache -modcache -i -r'
-
-# Manage my dotfiles with git. e.g., instead of "git status", use "config status"
-# See https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Learnings
 export LEARNS_PATH="~/Documents/learnings"
