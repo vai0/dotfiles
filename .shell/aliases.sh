@@ -46,15 +46,19 @@ alias killcontainers='docker rm -f $(docker container ls -aq)'
 alias killslack="kill -9 $(pidof slack)"
 
 # Managing dotfiles
-alias vimrc="v ~/.dotfiles/vimrc"
-alias initvim="v ~/.dotfiles/init.vim"
-alias aliases="v ~/.dotfiles/.shell/aliases.sh"
-alias zshrc="v ~/.dotfiles/zshrc"
+alias vimrc="vim ~/.dotfiles/vimrc"
+alias initvim="vim ~/.dotfiles/init.vim"
+alias aliases="vim ~/.dotfiles/.shell/aliases.sh"
+alias zshrc="vim ~/.dotfiles/zshrc"
 alias installdotfiles="~/.dotfiles/install"
 
 # Kill and remove all containers
 alias drm='docker rm -f $(docker container ls -aq)'
-alias dsp='docker system prune -a --volumes'
+alias dip='docker image prune -a --force'
+alias dsp='docker system prune --force --volumes -a'
+
+# Clear go cache and builds
+alias goclean='go clean -cache -modcache -i -r'
 
 # Manage my dotfiles with git. e.g., instead of "git status", use "config status"
 # See https://www.atlassian.com/git/tutorials/dotfiles
@@ -69,7 +73,7 @@ alias learns-pull="cd ${LEARNS_PATH} && git pull"
 
 # Notes
 export NOTES_PATH="~/Documents/notes"
-alias notes="sudo v ${NOTES_PATH}/notes.md"
+alias notes="code ${NOTES_PATH}/notes.md"
 alias notes-commit="cd ${NOTES_PATH} && gicc"
 alias notes-push="cd ${NOTES_PATH} && git push"
 alias notes-pull="cd ${NOTES_PATH} && git pull"
@@ -78,4 +82,6 @@ alias notes-pull="cd ${NOTES_PATH} && git pull"
 alias jss="code ~/Documents/sandbox.js"
 alias pys="code ~/Documents/sandbox.py"
 alias mds="code ~/Documents/sandbox.md"
+
+alias upgradevscode="sudo apt install code --only-upgrade"
 

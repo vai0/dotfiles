@@ -4,8 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="igorsilva"
-plugins=(git)
-
+plugins=(git kubectl)
 source $ZSH/oh-my-zsh.sh
 
 # Added by Nix installer
@@ -44,7 +43,8 @@ source ~/.dotfiles/.shell/work-bookmarks.sh
 source <(kubectl completion zsh)
 
 # Activate direnv
-eval "$(direnv hook $SHELL)"
+# eval "$(direnv hook $SHELL)"
+eval "$(direnv hook zsh)"
 
 # fnm
 export PATH=/home/jchi/.fnm:$PATH
@@ -53,3 +53,16 @@ eval "`fnm env`"
 autoload bashcompinit
 bashcompinit
 # source /home/jchi/projects/vcpkg/scripts/vcpkg_completion.zsh
+
+[[ -s "/home/jchi/.gvm/scripts/gvm" ]] && source "/home/jchi/.gvm/scripts/gvm"
+
+# Load pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Load pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
+
+# Poetry (python dep manager) is installed in /.local/bin
+export PATH="/home/jchi/.local/bin:$PATH"

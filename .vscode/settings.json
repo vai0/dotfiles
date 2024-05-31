@@ -12,7 +12,8 @@
         "**/dist-prod": true,
         "**/dist-staging": true,
         "**/dist-test": true,
-        "**/vendor/": true
+        "**/vendor/": true,
+        "**/github.com/": true
     },
     "files.watcherExclude": {
         ".DS_Store": true,
@@ -27,7 +28,8 @@
         "**/dist-prod": true,
         "**/dist-staging": true,
         "**/dist-test": true,
-        "**/vendor/": true
+        "**/vendor/": true,
+        "**/github.com/": true
     },
     "keyboard.dispatch": "keyCode",
     "emmet.includeLanguages": {
@@ -35,7 +37,7 @@
         "typescript": "typescriptreact"
     },
     "emmet.triggerExpansionOnTab": true,
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "workbench.list.smoothScrolling": true,
     "workbench.colorCustomizations": {
         "diffEditor.insertedTextBackground": "#99b76d23",
@@ -46,6 +48,7 @@
     "javascript.updateImportsOnFileMove.enabled": "prompt",
     "javascript.preferences.importModuleSpecifier": "non-relative",
     "typescript.preferences.importModuleSpecifier": "non-relative",
+    "typescript.tsdk": "node_modules/.pnpm/typescript@4.7.4/node_modules/typescript/lib",
     "editor.stickyScroll.enabled": true,
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
@@ -55,7 +58,7 @@
         "editor.formatOnSave": true
     },
     "[json]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": false
     },
     "[html]": {
         "editor.formatOnSave": false
@@ -73,34 +76,29 @@
     "[graphql]": {
         "editor.formatOnSave": false
     },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "golang.go"
+    },
     "prettier.tabWidth": 4,
     "prettier.trailingComma": "es5",
-    "go.gopath": "/home/jchi/projects/helios/go",
-    "go.docsTool": "gogetdoc",
     "go.formatTool": "gofmt",
     "go.alternateTools": {
         "gofmt": "gofumpt"
     },
     "go.useLanguageServer": true,
-    "[go]": {
-        "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        },
-        "editor.defaultFormatter": "golang.go"
-    },
-    "gopls": {
-        "build.buildFlags": ["-tags=cluster,integration"]
-    },
+
     "editor.renderWhitespace": "boundary",
     "editor.codeActionsOnSave": {
-        "source.fixAll": true,
-        "source.addMissingImports": false
+        "source.fixAll": "explicit",
+        "source.addMissingImports": "never"
     },
-    "editor.lineNumbers": "relative",
     "editor.cursorSurroundingLines": 5,
-    "editor.fontFamily": "Iosevka, Hack, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "Iosevka, Fira Code, Hack, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontWeight": "500",
     "editor.fontSize": 19,
     "editor.fontLigatures": true,
@@ -197,7 +195,6 @@
     },
     "vim.hlsearch": true,
     "gitlens.codeLens.enabled": false,
-    "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.plusFeatures.enabled": false,
@@ -206,8 +203,28 @@
     "workbench.colorTheme": "Soft Colors",
     "python.formatting.provider": "black",
     "security.workspace.trust.untrustedFiles": "open",
-    "workbench.editor.untitled.hint": "hidden",
     "git.ignoreLegacyWarning": true,
     "files.insertFinalNewline": true,
-    "window.zoomLevel": 2
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.minimap.enabled": false,
+    "workbench.editor.empty.hint": "hidden",
+    "gitlab.aiAssistedCodeSuggestions.enabled": false,
+    "gitlab.duoChat.enabled": false,
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.currentLine.enabled": false,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "github.copilot.advanced": {},
+    "github.copilot.editor.enableAutoCompletions": true,
+    "scm.workingSets.enabled": true,
+    "github.copilot.editor.enableCodeActions": false
+    // "vscode-neovim.useCtrlKeysForNormalMode": false,
+    // "vscode-neovim.useCtrlKeysForInsertMode": false
 }

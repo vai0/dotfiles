@@ -98,3 +98,5 @@ source ~/.dotfiles/.shell/secrets.sh
 source ~/.dotfiles/.shell/work-bookmarks.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[[ -s "/home/jchi/.gvm/scripts/gvm" ]] && source "/home/jchi/.gvm/scripts/gvm"
