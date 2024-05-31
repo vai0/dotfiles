@@ -91,12 +91,6 @@ source ~/.dotfiles/.shell/aliases.sh
 # Source bootstrap
 source ~/.dotfiles/.shell/bootstrap.sh
 
-# Source secrets
-source ~/.dotfiles/.shell/secrets.sh
-
 # Source work-related bookmarks
 source ~/.dotfiles/.shell/work-bookmarks.sh
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-[[ -s "/home/jchi/.gvm/scripts/gvm" ]] && source "/home/jchi/.gvm/scripts/gvm"

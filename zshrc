@@ -4,37 +4,28 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="igorsilva"
-plugins=(git kubectl)
+plugins=(git kubectl z)
 source $ZSH/oh-my-zsh.sh
 
 # Added by Nix installer
 if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile/etc/profile.d/nix.sh; fi
 
-
 # fnm
-export PATH=/home/jchi/.fnm:$PATH
-eval "`fnm env`"
-
-# snap package managener (for spotify... spotify's deb package is out of date)
-export PATH="$PATH:/snap/bin"
+FNM_PATH="/home/jchi/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# enable fzf keybindings and fuzzy auto-completion
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
-
-# Init z (https://github.com/rupa/z)
-. ~/z.sh
+source <(fzf --zsh)
 
 # Source aliases
 source ~/.dotfiles/.shell/aliases.sh
 
 # Source bootstrap
 source ~/.dotfiles/.shell/bootstrap.sh
-
-# Source secrets
-source ~/.dotfiles/.shell/secrets.sh
 
 # Source work-related bookmarks
 source ~/.dotfiles/.shell/work-bookmarks.sh
@@ -66,3 +57,4 @@ eval "$(pyenv virtualenv-init -)"
 
 # Poetry (python dep manager) is installed in /.local/bin
 export PATH="/home/jchi/.local/bin:$PATH"
+

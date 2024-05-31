@@ -3,7 +3,6 @@
   enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
 [keybindings]
   copy = <Control>c
-  paste = <Primary>v
   switch_to_tab_1 = <Alt>1
   switch_to_tab_2 = <Alt>2
   switch_to_tab_3 = <Alt>3

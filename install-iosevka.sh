@@ -8,5 +8,7 @@ unzip \*.zip
 
 sudo mkdir /usr/local/share/fonts/iosevka-font
 sudo mv *.ttf /usr/local/share/fonts/iosevka-font/.
+sudo rm -rf /tmp/iosevka-font/
+sudo rm -rf ttf-iosevka-$RELEASE.zip
 
 sudo fc-cache -fv

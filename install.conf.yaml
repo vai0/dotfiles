@@ -36,6 +36,15 @@
 - shell:
     -
         command: cat .vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash
-        description: Install VSCode extensions
-        quiet: true
+        description: Installing VSCode extensions...
+        quiet: false
+        stdin: true
         stdout: true
+        stderr: true
+    -
+        command: ./install-iosevka.sh
+        description: Installing Iosevka font...
+        quiet: false
+        stdin: true
+        stdout: true
+        stderr: true
